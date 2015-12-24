@@ -64,8 +64,7 @@ The Starter Boilerplate has been developed using the MEAN stack:
 1. Install MongoDB, Express, Node.js and git on your machine
 2. Open the git shell or the git bash
 3. Run "git clone https://github.com/NicolaFerracin/starter-boilerplate"
-4. Start mongodb by typing "mongod" in the command line
-4. Open another command line, navigate inside the main app folder and type "node server.js"
+4. Open the command line, navigate inside the main app folder and type "node server.js"
 5. Wait to see the following in you command line "App listening on port 8080"
 5. Open your browser and go [here](http://localhost:8080) to see it live
 6. Edit the files, save, restart the server and make it yours!
