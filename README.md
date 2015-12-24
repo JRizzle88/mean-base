@@ -73,6 +73,11 @@ The Starter Boilerplate has been developed using the MEAN stack:
 ##Deploy to Heroku
 1. Create an account on [Heroku](https://signup.heroku.com/login)
 2. Install the [Heroku Toolbelt](https://toolbelt.heroku.com/)
-3. Open the git shell or the git bash and navigate inside the main folder of your app
+3. Make sure you create a mongoDB database online (not a local one) and replace the URI inside starter-boilerplate > config > database.js file
+4. Open the git shell or the git bash and navigate inside the main folder of your app
+5. Run the usual git commands to commit the changes ("git add ." - "git commit -am 'message'")
 4. Run "heroku login" and follow the instructions
 5. Run "heroku create"
+6. Run "git push heroku master"
+7. Run "heroku open"
+8. You should be redirected to a window in your browser with your app running
