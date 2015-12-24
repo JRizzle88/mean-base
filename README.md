@@ -12,6 +12,7 @@ Welcome to my Starter Boilerplate!
 - Express routing for api calls and authentication backend
 - Example of Thing mongoose model already implemented with relative api calls for creating, deleting, updating and retrieving
 - Easy to adapt and scale
+- Fast Heroku deployment
 
 ##App tree
 ```
@@ -61,10 +62,17 @@ The Starter Boilerplate has been developed using the MEAN stack:
 
 ##How to make it yours!
 1. Install MongoDB, Express, Node.js and git on your machine
-2. Open git shell or git bash
+2. Open the git shell or the git bash
 3. Run "git clone https://github.com/NicolaFerracin/starter-boilerplate"
 4. Start mongodb by typing "mongod" in the command line
 4. Open another command line, navigate inside the main app folder and type "node server.js"
 5. Wait to see the following in you command line "App listening on port 8080"
-5. Open your browser and go [here](http://localhost/8080) to see it live
+5. Open your browser and go [here](http://localhost:8080) to see it live
 6. Edit the files, save, restart the server and make it yours!
+
+##Deploy to Heroku
+1. Create an account on [Heroku](https://signup.heroku.com/login)
+2. Install the [Heroku Toolbelt](https://toolbelt.heroku.com/)
+3. Open the git shell or the git bash and navigate inside the main folder of your app
+4. Run "heroku login" and follow the instructions
+5. Run "heroku create"
