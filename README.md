@@ -2,6 +2,7 @@
 Welcome to my Starter Boilerplate
 
 ## App tree
+```
 Boilerplate
 -app
 --models
@@ -31,6 +32,7 @@ Boilerplate
 -Procfile (for Heroku deployment)
 -README.md (it's me!)
 -server.js (setting up the express server)
+```
 
 ##Tools
 The Starter Boilerplate has been developed using the MEAN stack:
