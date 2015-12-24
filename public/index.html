@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<base href="/">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>PollIt</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<!-- Import boostrap and jquery -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<!-- import font -->
+	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<!-- import css -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<!-- Include the core AngularJS library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<!-- Include the AngularJS routing library -->
+	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
+	<!-- Imports for google charting -->
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+	google.load("visualization", "1", {packages:["corechart"]});
+	</script>
+
+</head>
+<body ng-app="PollitApp" ng-controller="IndexController">
+	<!-- navigator and footer and ng-view in the middle -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#poll_navbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand logo" href="/">PollIt</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="poll_navbar">
+				<ul class="nav navbar-nav">
+					<li><a href="/browsePolls">Browse Polls</a></li>
+					<li ng-show="user.isLoggedIn"><a href="/newPoll">New Poll</a></li>
+					<li ng-show="user.isLoggedIn"><a href="/myPolls">My Polls</a></li>
+				</ul>
+				<!-- right navbar login and signup form -->
+				<ul class="nav navbar-nav navbar-right">
+					<p class="navbar-btn" ng-hide="user.isLoggedIn">
+						<a href="/login" class="btn btn-primary">Login</a>
+						<a href="/signup" class="btn btn-default">Sign Up</a>
+					</p>
+					<p class="navbar-btn" ng-show="user.isLoggedIn">
+						Welcome, {{user.email}}!
+						<a ng-click="logout()" class="btn btn-danger">Logout</a>
+					</p>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+	<div ng-view class="view"></div>
+
+	<!-- footer -->
+	<div class="navbar navbar-default navbar-fixed-bottom nav-center">
+		<div class="container nav nav-center">
+			<ul class="footer navbar-text nav nav-center">© 2015 - Site Built by <a target="_new" href="https://github.com/NicolaFerracin">Nicola Ferracin</a></ul>
+		</div>
+	</div>
+
+	<!-- Modules -->
+	<script src="js/app.js"></script>
+
+	<!-- Controllers -->
+	<script src="js/controllers/HomeController.js"></script>
+	<script src="js/controllers/LoginController.js"></script>
+	<script src="js/controllers/NewPollController.js"></script>
+	<script src="js/controllers/BrowseController.js"></script>
+	<script src="js/controllers/SignupController.js"></script>
+	<script src="js/controllers/IndexController.js"></script>
+	<script src="js/controllers/MyPollsController.js"></script>
+	<script src="js/controllers/PollController.js"></script>
+
+</body>
+</html>
