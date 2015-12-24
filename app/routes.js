@@ -60,7 +60,7 @@ module.exports = function(app, passport) {
 			}
 		//	poll.answers = req.body.answers;
 		//	poll.votes = req.body.votes;
-		//	poll.save(function (err) {
+				thing.save(function (err) {
 				if (err) {
 					res.send(err);
 				}

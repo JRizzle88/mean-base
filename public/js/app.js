@@ -1,5 +1,5 @@
 // angular routing
-var app = angular.module('NameApp', ['ngRoute']);
+var app = angular.module('BoilerplateApp', ['ngRoute']);
 
 // User global object to check loggedin status
 app.service('User', function () {
