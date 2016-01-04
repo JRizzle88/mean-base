@@ -1,9 +1,10 @@
 #Boilerplate
-Welcome to my Starter Boilerplate! You can see a running and working version [here](https://aqueous-fjord-9757.herokuapp.com/)
+Welcome to my SinglePageApplication Starter Boilerplate! You can see a running and working version [here](https://aqueous-fjord-9757.herokuapp.com/)
 
 ##Features
+- SPA
 - MEAN stack
-- Bootstrap for frontend
+- Bootstrap on frontend
 - Passport.js Authentication already implemented and working
 - Angular routing with:
   - Main Index view (navigator, footer and user greeting when loggedin)

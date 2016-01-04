@@ -1,7 +1,7 @@
 {
   "name"         : "Boilerplate",
   "version"      : "0.0.0",
-  "description"  : "This is a basic boilerplate.",
+  "description"  : "This is a basic boilerplate for a Single Page Application.",
   "main"         : "server.js",
   "author"       : "NicolaFerracin",
   "dependencies" : {

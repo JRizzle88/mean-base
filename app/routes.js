@@ -6,10 +6,8 @@ module.exports = function(app, passport) {
 	// create thing
 	app.post('/api/things', function(req, res) {
 		Thing.create({
-	//		question : req.body.question,
-	//		answers : req.body.answers,
-	//		author : req.body.author
-}, function(err, thing) {
+			// TODO populate the obj
+		}, function(err, thing) {
 			if (err) {
 				res.send(err);
 			}
@@ -19,7 +17,7 @@ module.exports = function(app, passport) {
 
 	// get all things
 	app.get('/api/things', function(req, res) {
-		// use mongoose to get all polls from the db
+		// use mongoose to get all things from the db
 		Thing.find(function(err, things) {
 			// if err, send it
 			if (err) {
@@ -29,16 +27,17 @@ module.exports = function(app, passport) {
 		});
 	});
 
-	// get thing by username
-	app.get('/api/things/:username', function(req, res) {
-			// use mongoose to get all polls from the db
-			Thing.find({ author : req.params.username }, function(err, things) {
-				// if err, send it
-				if (err) {
-					res.send(err);
-				}
-				res.json(things);
-			});
+	// get thing by parameter
+	app.get('/api/things/:parameter', function(req, res) {
+		// use mongoose to get all the things using a paramater
+		// TODO Populate the search obj with the needed parameter
+		Thing.find({}, function(err, things) {
+			// if err, send it
+			if (err) {
+				res.send(err);
+			}
+			res.json(things);
+		});
 	});
 
 	// get thing by id
@@ -52,15 +51,15 @@ module.exports = function(app, passport) {
 		});
 	});
 
-	// update a thing
+	// update a thing by id
 	app.post('/api/things/:id', function(req, res) {
 		Thing.findById(req.body._id, function(err, thing) {
 			if(err) {
 				res.send(err);
 			}
-		//	poll.answers = req.body.answers;
-		//	poll.votes = req.body.votes;
-				thing.save(function (err) {
+			// TODO make changes to thing
+			// save
+			thing.save(function (err) {
 				if (err) {
 					res.send(err);
 				}
@@ -69,7 +68,7 @@ module.exports = function(app, passport) {
 		});
 	});
 
-	// delete a thing
+	// delete a thing by id
 	app.delete('/api/things/:id', function(req, res) {
 		Thing.remove({
 			_id : req.params.id
@@ -118,22 +117,20 @@ module.exports = function(app, passport) {
 		})(req, res, next);
 	});
 
+	// check if the user is logged in an retrieve a different user obj based on the status
 	app.get('/loggedin', function(req, res) {
 		var user = {};
 		if (req.isAuthenticated()) {
 			user.isLoggedIn = true;
 			user.email = req.user.local.email;
-		}
-		else {
+		} else {
 			user.isLoggedIn = false;
 			user.email = undefined;
 		}
 		res.json(user);
 	});
 
-	// =====================================
-	// LOGOUT ==============================
-	// =====================================
+	// log the user out and redirect to /
 	app.get('/logout', function(req, res) {
 		req.logout();
 		res.redirect('/');

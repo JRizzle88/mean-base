@@ -1,16 +1,18 @@
 app.controller('SignupController', ['$scope', '$http', '$window', function($scope, $http, $window) {
 
+  // booleans to show/hide alerts
   $scope.submitted = false;
   $scope.showPasswordAlert = false;
   $scope.showErrorAlert = false;
 
+  // account model for our view
   $scope.account = {
     email : '',
     password : '',
     repeatPassword : ''
   }
 
-
+  // at signup button click
   $scope.signup = function(account) {
     resetErrors();
     $scope.submitted = true;
@@ -20,6 +22,7 @@ app.controller('SignupController', ['$scope', '$http', '$window', function($scop
       $scope.showPasswordAlert = true;
     }
 
+    // user obj we are sending to the server
     var user = {
       email : account.email,
       password : account.password
@@ -27,7 +30,8 @@ app.controller('SignupController', ['$scope', '$http', '$window', function($scop
 
     $http.post("/api/signup", user)
     .success(function (data, status) {
-      console.log('Successful login.');
+      console.log('Successful signup.');
+      // if successfull, redirect to /
       $window.location.href = '/';
     })
     .error(function (data) {
@@ -37,12 +41,9 @@ app.controller('SignupController', ['$scope', '$http', '$window', function($scop
     });
   };
 
-
   var resetErrors = function() {
     $scope.submitted = false;
     $scope.showPasswordAlert = false;
     $scope.showErrorAlert = false;
   }
-
-
 }]);
