@@ -11,15 +11,15 @@ app.config(function ($routeProvider, $locationProvider) {
   $routeProvider
   .when('/login', {
     controller: 'LoginController',
-    templateUrl: 'views/login.html'
+    templateUrl: 'js/users/views/login.html'
   })
   .when('/signup', {
     controller: 'SignupController',
-    templateUrl: 'views/signup.html'
+    templateUrl: 'js/users/views/signup.html'
   })
   .otherwise({
     controller: 'HomeController',
-    templateUrl: 'views/home.html'
+    templateUrl: 'js/home/views/home.html'
   });
 
   // use the HTML5 History API
