@@ -9,7 +9,9 @@ app.controller('SignupController', ['$scope', '$http', '$window', function($scop
   $scope.account = {
     email : '',
     password : '',
-    repeatPassword : ''
+    repeatPassword : '',
+    notes: '',
+    admin: false
   }
 
   // at signup button click
@@ -25,7 +27,9 @@ app.controller('SignupController', ['$scope', '$http', '$window', function($scop
     // user obj we are sending to the server
     var user = {
       email : account.email,
-      password : account.password
+      password : account.password,
+      notes : account.notes,
+      admin : account.admin
     };
 
     $http.post("/api/signup", user)
@@ -33,6 +37,7 @@ app.controller('SignupController', ['$scope', '$http', '$window', function($scop
       console.log('Successful signup.');
       // if successfull, redirect to /
       $window.location.href = '/';
+      console.log("this is what we sent to mongoose" + JSON.stringify(user));
     })
     .error(function (data) {
       console.log('Error: ' + data);

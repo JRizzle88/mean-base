@@ -3,7 +3,7 @@
   "version"      : "0.0.0",
   "description"  : "This is a basic boilerplate for a Single Page Application.",
   "main"         : "server.js",
-  "author"       : "NicolaFerracin",
+  "author"       : "",
   "dependencies" : {
     "passport" : "latest",
     "passport-local" : "latest",

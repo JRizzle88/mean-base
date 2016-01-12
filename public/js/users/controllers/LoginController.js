@@ -10,7 +10,9 @@ app.controller('LoginController', ['$scope', '$http', '$window', function($scope
   // account model for our view
   $scope.account = {
     email : '',
-    password : ''
+    password : '',
+    admin: false,
+    notes: ''
   }
 
   // at login button click
@@ -20,8 +22,11 @@ app.controller('LoginController', ['$scope', '$http', '$window', function($scope
     // user obj we are sending to the server
     var user = {
       email : account.email,
-      password : account.password
+      password : account.password,
+      admin : account.admin,
+      notes : account.notes
     };
+    console.log(user);
 
     $http.post("/api/login", user)
     .success(function (data, status) {

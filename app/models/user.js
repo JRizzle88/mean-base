@@ -10,6 +10,14 @@ var userSchema = mongoose.Schema({
     local            : {
         email        : String,
         password     : String,
+        notes        : {
+          type: String,
+          default: "no notes"
+        },
+        admin        : { 
+          type: Boolean,
+          default: false
+        }
     }
 });
 

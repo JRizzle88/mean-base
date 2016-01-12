@@ -9,9 +9,10 @@ app.controller('IndexController', ['$scope', '$http', 'User', '$window', functio
     if (data.isLoggedIn) {
       // if user is logged in update the global obj
       User.isLoggedIn = data.isLoggedIn;
-      User.email = data.email;
+      User = data;
       // create a local copy of the global obj for local access
       $scope.user = User;
+      console.log("user: " + JSON.stringify($scope.user));
     }
   })
   .error(function (err) {

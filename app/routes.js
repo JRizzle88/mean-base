@@ -123,6 +123,8 @@ module.exports = function(app, passport) {
 		if (req.isAuthenticated()) {
 			user.isLoggedIn = true;
 			user.email = req.user.local.email;
+			user.admin = req.user.local.admin;
+			user.notes = req.user.local.notes;
 		} else {
 			user.isLoggedIn = false;
 			user.email = undefined;

@@ -1,20 +1,3 @@
-#Boilerplate
-Welcome to my SinglePageApplication Starter Boilerplate! You can see a running and working version [here](https://aqueous-fjord-9757.herokuapp.com/)
-
-##Features
-- SPA
-- MEAN stack
-- Bootstrap on frontend
-- Passport.js Authentication already implemented and working
-- Angular routing with:
-  - Main Index view (navigator, footer and user greeting when loggedin)
-  - Home view (presentation)
-  - Login and Signup views for authentication
-- Express routing for api calls and authentication backend
-- Example of Thing mongoose model already implemented with relative api calls for creating, deleting, updating and retrieving
-- Easy to adapt and scale
-- Fast Heroku deployment
-
 ##App tree
 ```
 Boilerplate
@@ -32,13 +15,23 @@ Boilerplate
 -public
 --css
 ---stylesheet.css
---img (add all your images here)
+--img
 --js
----controllers
-----HomeController.js (angular controller for the Home view)
-----IndexController.js (angular controller for the main Index view)
-----LoginController.js (angular controller for the Login view)
-----SignupController.js (angular controller for the Signup view)
+---home
+----controllers
+-----HomeController.js
+----views
+-----home.html
+---index
+----controllers
+-----IndexController.js
+---Users
+----controllers
+-----LoginController.js
+-----SignupController.js
+----views
+-----login.html
+-----signup.html
 ---app.js (angular routing and service for the User global object)
 --views
 ---home.html (Home view)
@@ -52,31 +45,10 @@ Boilerplate
 -server.js (setting up the express server)
 ```
 
-##Tools
-The Starter Boilerplate has been developed using the MEAN stack:
-- MongoDB and Mongoose
-- Express
-- Angular
-- Node.js
-- Passport.js, bcrypt
-- Bootstrap for frontend
 
-##How to make it yours!
+##Getting Started
 1. Install MongoDB, Express, Node.js and git on your machine
-2. Open the git shell or the git bash
-3. Run "git clone https://github.com/NicolaFerracin/starter-boilerplate"
-4. Open the command line, navigate inside the main app folder and type "node server.js"
+2. Run "npm install"
+4. Run the server with "node server.js"
 5. Wait to see the following in you command line "App listening on port 8080"
-5. Open your browser and go [here](http://localhost:8080) to see it live
-6. Edit the files, save, restart the server and make it yours!
-
-##Deploy to Heroku
-1. Create an account on [Heroku](https://signup.heroku.com/login)
-2. Install the [Heroku Toolbelt](https://toolbelt.heroku.com/)
-3. Open the git shell or the git bash and navigate inside the main folder of your app
-4. Run the usual git commands to commit the changes ("git add ." - "git commit -am 'message'")
-5. Run "heroku login" and follow the instructions
-6. Run "heroku create"
-7. Run "git push heroku master"
-8. Run "heroku open"
-9. You should be redirected to a window in your browser with your app running
+6. Open your browser and go [here](http://localhost:8080) to see it live
