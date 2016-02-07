@@ -24,7 +24,7 @@ Authentication
 1. Install Node.js, MongoDB, Express, and git on your machine
 2. Clone the repository
 ```
-[here](git@github.com:JRizzle88/mean-base.git)
+git clone git@github.com:JRizzle88/mean-base.git
 ```
 3. To install node packages listed in package.json run
 ```
