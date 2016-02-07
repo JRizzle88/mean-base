@@ -1,10 +1,10 @@
 // set up ======================================================================
-var express  = require('express');
-var app      = express(); 								// create our app w/ express
-var mongoose = require('mongoose'); 					// mongoose for mongodb
-var database = require('./config/database'); 			// load the database config
+var express = require('express');
+var app = express(); // create our app w/ express
+var mongoose = require('mongoose'); // mongoose for mongodb
+var database = require('./config/database'); // load the database config
 var cookieParser = require('cookie-parser');
-var morgan   = require('morgan');
+var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var passport = require('passport');
@@ -13,7 +13,7 @@ var session = require('express-session');
 var port = process.env.PORT || 3000 // setting up the port
 
 // configuration ===============================================================
-mongoose.connect(database.url); 	// connect to mongoDB database on modulus.io
+mongoose.connect(database.url); // connect to mongoDB database on modulus.io
 
 app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev')); // log every request to the console
