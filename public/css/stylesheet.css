@@ -1,4 +1,8 @@
+
 /* nav bar */
+.navbar {
+    margin-bottom: 0;
+}
 .logo {
   font-size: 200%;
 }
@@ -15,7 +19,6 @@
 
 #banner {
   border-bottom: none;
-  margin-top: -20px;
 }
 
 #banner h1 {
@@ -34,5 +37,32 @@
   color: #F5F5F5;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  background: #FF6600;
+  background: #1565c0;
+}
+
+.features,
+.mean-stack,
+.callout-message {
+    padding: 50px 0px;
+}
+.mean-stack {
+    background: #dddddd;
+}
+.view-github {
+    color: #1565c0;
+}
+/* debug container - display: none or comment markup in index.html */
+#debug-container {
+    position: fixed;
+    z-index: 9999;
+    left: 5px;
+    bottom: 100px;
+    width: 200px;
+    min-height: 400px;
+    padding: 20px;
+    background:#D8FDFF;
+    word-wrap: break-word;
+    display: block;
+    border: 1px solid #dddddd;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }

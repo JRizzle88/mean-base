@@ -12,9 +12,9 @@
         <label>Password</label>
         <input type="password" class="form-control" name="password" placeholder="Insert Password" ng-model="account.password" required>
       </div>
-      <span ng-show="showErrorAlert" class="alert">
+      <div ng-show="showErrorAlert" class="alert alert-danger">
         <p>Uh oh! {{errorAlert}}</p>
-      </span>
+      </div>
       <div>
         <button ng-disabled="loginForm.$invalid" class="btn btn-lg btn-success" type="submit">Login</button>
       </div>

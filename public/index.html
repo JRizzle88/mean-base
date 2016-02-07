@@ -5,77 +5,47 @@
     <!-- the following line is needed because the SPA urls would show # characters otherwise. It also needs line 27 in app.js -->
     <base href="/">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Starter Boilerplate</title><!-- Import boostrap and jquery -->
-    <link href=
-    "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-    rel="stylesheet">
-    <script src=
-    "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
-    </script>
-    <script src=
-    "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
-    </script><!-- import css -->
+    <title>MEAN Base</title>
+
+    <!-- Import boostrap and jquery -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- import css -->
     <link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+
     <!-- Include the core AngularJS library -->
+    <script src="https://code.angularjs.org/1.4.9/angular.min.js"></script>
+    <!-- Include the AngularJS routing library -->
+    <script src="https://code.angularjs.org/1.4.9/angular-route.min.js"></script>
 
-    <script src=
-    "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js">
-    </script><!-- Include the AngularJS routing library -->
-
-    <script src="https://code.angularjs.org/1.2.28/angular-route.min.js">
-    </script>
 </head>
-<body ng-app="BoilerplateApp" ng-controller="IndexController">
-    <!-- navigator and footer and ng-view in the middle -->
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button class="navbar-toggle" data-target="#navbar"
-                data-toggle="collapse" type="button"><span class=
-                "icon-bar"></span> <span class="icon-bar"></span> <span class=
-                "icon-bar"></span></button> <a class="navbar-brand" href=
-                "/">Starter Boilerplate</a>
-            </div>
-            <!-- Collect the nav links, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Link</a>
-                    </li>
-                </ul><!-- right navbar login and signup and logout -->
-                <div class="nav navbar-nav navbar-right" style=
-                "margin-left: 2em">
-                    <p class="navbar-btn" ng-hide="user.isLoggedIn"><a class=
-                    "btn btn-primary" href="/login">Login</a> <a class=
-                    "btn btn-default" href="/signup">Sign Up</a></p>
-                    <p class="navbar-btn" ng-show="user.isLoggedIn">Welcome,
-                    {{user.email}}! <a class="btn btn-danger" ng-click=
-                    "logout()">Logout</a></p>
-                    <p>Admin?: {{user}}</p>
-                </div>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
-    <div class="view" ng-view=""></div><!-- footer -->
-    <div class="navbar navbar-default navbar-fixed-bottom nav-center">
-        <div class="container nav nav-center">
-            <div class="footer navbar-text nav nav-center" style=
-            "margin-left: 2em">
-              This is a footer Yo!
-            </div>
-        </div>
-    </div><!-- Modules -->
-    <script src="js/app.js">
-    </script> <!-- Controllers -->
-     
-    <script src="js/home/controllers/HomeController.js">
-    </script> 
-    <script src="js/users/controllers/LoginController.js">
-    </script> 
-    <script src="js/users/controllers/SignupController.js">
-    </script> 
-    <script src="js/index/controllers/IndexController.js">
-    </script>
+<body ng-app="AppName" ng-controller="IndexController">
+
+    <div ng-include src="'js/partials/header.html'"></div>
+
+    <!--<div id="debug-container">
+        <b>DEBUG</b><br>
+        <em>adjust css or comment out in index</em>
+        <p></p>
+        {{user}}
+    </div>-->
+
+    <!-- main content -->
+    <div class="view" ng-view=""></div>
+
+    <div ng-include src="'js/partials/footer.html'"></div>
+
+
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+    <!-- Controllers -->
+    <script src="js/home/controllers/HomeController.js"></script>
+    <script src="js/users/controllers/LoginController.js"></script>
+    <script src="js/users/controllers/SignupController.js"></script>
+    <script src="js/users/controllers/AccountController.js"></script>
+    <script src="js/backend/controllers/BackendController.js"></script>
+    <script src="js/index/controllers/IndexController.js"></script>
 </body>
 </html>

@@ -1,0 +1,35 @@
+<!-- navigator and footer and ng-view in the middle -->
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-target="#navbar" data-toggle="collapse" type="button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">MEAN Base</a>
+        </div>
+        <!-- Collect the nav links, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <!--<li>
+                    <a href="#">Link</a>
+                </li>-->
+            </ul>
+            <!-- right navbar login and signup and logout -->
+            <div class="nav navbar-nav navbar-right" style="margin-left: 2em">
+                <p class="navbar-btn" ng-hide="user.isLoggedIn">
+                    <a class="btn btn-primary" href="/login">Login</a>
+                    <a class="btn btn-default" href="/signup">Sign Up</a>
+                </p>
+                <p class="navbar-btn" ng-show="user.isLoggedIn">
+                    <span class="label label-default">{{user.email}}</span>
+                    <a class="btn btn-primary" href="/account">Account</a>
+                    <a class="btn btn-info" ng-show="user.admin" href="/admin">Admin</a>
+                    <a class="btn btn-danger" ng-click="logout()">Logout</a>
+                </p>
+            </div>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>

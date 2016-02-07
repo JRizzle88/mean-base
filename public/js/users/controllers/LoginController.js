@@ -12,27 +12,30 @@ app.controller('LoginController', ['$scope', '$http', '$window', function($scope
     email : '',
     password : '',
     admin: false,
-    notes: ''
+    notes: '',
+    role: '',
+    license: '',
   }
 
-  // at login button click
+  // login button click
   $scope.login = function(account) {
     $scope.submitted = true;
 
     // user obj we are sending to the server
     var user = {
-      email : account.email,
-      password : account.password,
-      admin : account.admin,
-      notes : account.notes
+      email: account.email,
+      password: account.password,
+      admin: account.admin,
+      notes: account.notes,
+      role: account.role,
+      license: account.license
     };
-    console.log(user);
+    //console.log(user);
 
-    $http.post("/api/login", user)
-    .success(function (data, status) {
+    $http.post("/api/login", user).success(function (data, status) {
       console.log('Successful login.');
       // if successfull redirect to /
-      $window.location.href = '/';
+      $window.location.href = '/account';
     })
     .error(function (data) {
       console.log('Error: ' + data);

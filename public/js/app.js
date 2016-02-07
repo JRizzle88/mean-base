@@ -1,5 +1,5 @@
 // angular routing
-var app = angular.module('BoilerplateApp', ['ngRoute']);
+var app = angular.module('AppName', ['ngRoute']);
 
 // User global object to check loggedin status anywhere in the app
 app.service('User', function () {
@@ -16,6 +16,14 @@ app.config(function ($routeProvider, $locationProvider) {
   .when('/signup', {
     controller: 'SignupController',
     templateUrl: 'js/users/views/signup.html'
+  })
+  .when('/account', {
+    controller: 'AccountController',
+    templateUrl: 'js/users/views/account.html'
+  })
+  .when('/admin', {
+    controller: 'BackendController',
+    templateUrl: 'js/backend/views/backend.html'
   })
   .otherwise({
     controller: 'HomeController',

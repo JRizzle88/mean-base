@@ -1,0 +1,21 @@
+<div class="row" ng-show="user.admin">
+    <div class="col-xs-8 col-xs-offset-2">
+        <div class="page-header">
+            <h1>Administration</h1>
+        </div>
+        <div class="admin-body-no-user" ng-hide="user.admin">
+            <div class="alert alert-danger">Your not an admin. If this is a mistake, please contact us.</div>
+        </div>
+        <div class="admin-body" ng-show="user.admin">
+
+
+            <!-- Interate through all User Fields - debug purposes -->
+            <div class="alert alert-info" ng-show="user.admin">
+                <b>User Fields</b>
+                <p ng-repeat="(key, value) in user">
+                  {{key}}: {{value}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

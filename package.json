@@ -1,9 +1,9 @@
 {
-  "name"         : "Boilerplate",
-  "version"      : "0.0.0",
-  "description"  : "This is a basic boilerplate for a Single Page Application.",
+  "name"         : "MEAN Base",
+  "version"      : "0.1",
+  "description"  : "MEAN Base description",
   "main"         : "server.js",
-  "author"       : "",
+  "author"       : "Joshua Riley",
   "dependencies" : {
     "passport" : "latest",
     "passport-local" : "latest",

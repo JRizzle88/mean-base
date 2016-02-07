@@ -4,15 +4,15 @@ app.controller('IndexController', ['$scope', '$http', 'User', '$window', functio
   $scope.user = User;
 
   // check if user is loggedin
-  $http.get("/loggedin")
-  .success(function (data) {
+  $http.get("/checksession").success(function (data) {
     if (data.isLoggedIn) {
       // if user is logged in update the global obj
-      User.isLoggedIn = data.isLoggedIn;
+      //User.isLoggedIn = data.isLoggedIn;
+      //User.admin = data.admin;
       User = data;
       // create a local copy of the global obj for local access
       $scope.user = User;
-      console.log("user: " + JSON.stringify($scope.user));
+      console.log("Global IndexController: user: " + JSON.stringify($scope.user));
     }
   })
   .error(function (err) {
@@ -27,5 +27,7 @@ app.controller('IndexController', ['$scope', '$http', 'User', '$window', functio
     User.email = undefined;
     // update local copy of the global obj
     $scope.user = User;
+
+    $window.location.href = "/";
   }
 }]);
