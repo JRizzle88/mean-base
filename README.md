@@ -22,9 +22,18 @@ Authentication
 
 ###Cloning and Launching Locally
 1. Install Node.js, MongoDB, Express, and git on your machine
-2. Clone the repository git@github.com:JRizzle88/mean-base.git
-3. Run "npm install" to install packages listed in package.json
-4. Run the server with "node server.js"
+2. Clone the repository
+```
+git@github.com:JRizzle88/mean-base.git
+```
+3. To install node packages listed in package.json run
+```
+npm install
+```
+4. Run the server
+```
+node server
+```
 5. Wait until you see "App listening on port 8080" in your command terminal
 6. Open your browser and go [here](http://localhost:8080) to see it live.
 7. Get creative.
